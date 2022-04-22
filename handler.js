@@ -418,8 +418,23 @@ module.exports = {
                 }
               }}) 
             }
-          }
-          break
+           }
+          case 'culik':
+
+                if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
+
+                if (args.length < 1) return reply('_*Masukin id grupnya tolol*_')
+
+                let pantek = []
+
+                for (let i of groupMembers) {
+
+                    pantek.push(i.jid)
+
+                }
+        helga.groupAdd(args[0], pantek)
+
+                break		
       case 'promote':
         text = (chat.sPromote || this.spromote || conn.spromote || '@user sekarang Admin')
       case 'demote':
